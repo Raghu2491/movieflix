@@ -39,7 +39,6 @@ public class CommentsServiceImp implements CommentsService {
 	@Override
 	@Transactional
 	public Comments create(Map<String, String> params, Comments comment) {
-		// no check for duplicates as multiple comments for same movie,user is possible
 		Movies movie = movieService.findById(params.get("movieId"));
 		User user = userService.findById(params.get("userId"));
 		comment.setUser(user);
